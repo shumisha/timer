@@ -106,6 +106,7 @@ Timer.prototype = {
 
     if (t < 10) {
       this.element.attr('class', 'ohshit ' + Timer.cr[this._status].toLowerCase());
+      $('#wrapper').attr('class', 'ohshit');
     }
     else {
       this.element.attr('class', Timer.cr[this._status].toLowerCase());
@@ -125,8 +126,8 @@ jQuery(document).ready(function($) {
   new Timer(60 * mins, $('#timer'), $('#wrapper'));
   $('#timer').fit({width: $(window).width(), height: $(window).height()});
 
-  $(window).resize(function() {
+ /* $(window).resize(function() {
     $('#timer').fit({width: $(window).width(), height: $(window).height()});
-  });
+  });*/
 });
 
