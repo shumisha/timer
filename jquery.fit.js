@@ -43,7 +43,7 @@
            max = mid - 1;
          }
        } while (max > min && iterations--);
-mid = 0.75 * mid;
+mid = 0.85 * mid;
        $(this).css('fontSize', fits(Math.floor(mid), $(this)) ? mid + 'px': min + 'px');
      });
    };

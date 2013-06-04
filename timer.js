@@ -93,9 +93,10 @@ Timer.prototype = {
     this.displayTimeFor(this.length);
   },
   'displayTimeFor': function(t) {
+    if(t < 0) return;
     var minutes = Math.floor(t / 60);
     var seconds = t % 60;
-    var text = minutes + ':' + (seconds < 10? '0' + seconds: seconds);
+    var text = (minutes < 10 ? '' + minutes : minutes) + ':' + (seconds < 10? '0' + seconds: seconds);
 
     if (t < 60) {
       this.background.attr('class', 'warning');
@@ -113,7 +114,7 @@ Timer.prototype = {
     }
 
 
-    $(this.element).text(text);
+    $(this.element).html(text);
   },
   'getTime': function() {
     return Math.floor((new Date()).getTime() / 1000);
